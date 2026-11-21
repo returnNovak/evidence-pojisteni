@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pavel Novák">
+    <meta name="description" content="Webová aplikace pro evidenci pojištěných osob.">
+    <meta name="theme-color" content="#17243a">
+
+    <title>Evidence pojištění</title>
+
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Levý navigační panel -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">EP</div>
+
+                <div class="brand-name">
+                    <strong>Evidence</strong>
+                    <span>Pojištění</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <span class="sidebar-label">HLAVNÍ MENU</span>
+
+                <nav class="navigation">
+                    <a href="#" class="nav-link active">
+                        <span>▦</span>
+                        Přehled
+                    </a>
+
+                    <a href="#persons-heading" class="nav-link">
+                        <span>♙</span>
+                        Pojištěnci
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>⚙</span>
+                        Nastavení
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span>Evidence pojištění</span>
+                <small>Verze 1.0</small>
+            </div>
+
+        </aside>
+
+        <!-- Hlavní pracovní plocha -->
+        <div class="main-area">
+
+            <!-- Horní lišta -->
+            <header class="topbar">
+
+                <div>
+                    <span class="topbar-label">ADMINISTRACE</span>
+                    <strong>Správa pojištěnců</strong>
+                </div>
+
+                <div class="user-info">
+                    <div class="user-avatar">PN</div>
+                    <span>Administrátor</span>
+                </div>
+
+            </header>
+
+            <!-- Hlavní obsah -->
+            <main class="content">
+
+                <section class="page-heading">
+                    <div>
+                        <h1>Přehled pojištěnců</h1>
+                        <p>Správa a evidence všech pojištěných osob.</p>
+                    </div>
+                </section>
+
+                <!-- Statistiky -->
+                <section class="stats-grid" aria-label="Statistiky evidence">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">♙</div>
+
+                        <div class="stat-content">
+                            <span class="stat-label">Celkem pojištěnců</span>
+                            <strong id="persons-count" class="stat-value">0</strong>
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <!-- Formulář nového pojištěnce -->
+                <section class="content-card form-card" aria-labelledby="form-heading">
+
+                    <div class="card-header">
+                        <div>
+                            <h2 id="form-heading">Nový pojištěnec</h2>
+                            <p>Vyplňte údaje nové pojištěné osoby.</p>
+                        </div>
+                    </div>
+
+                    <form id="person-form" class="person-form">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="firstName">Jméno</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Např. Jan"
+                                    autocomplete="given-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Příjmení</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Např. Novák"
+                                    autocomplete="family-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Věk</label>
+                                <input type="number" id="age" name="age" min="1" max="120" placeholder="Věk" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+420 777 123 456"
+                                    autocomplete="tel" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">
+                                <span>+</span>
+                                Přidat pojištěnce
+                            </button>
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <!-- Seznam pojištěnců -->
+                <section class="content-card table-card" aria-labelledby="persons-heading">
+
+                    <div class="card-header">
+                        <div>
+                            <h2 id="persons-heading">Seznam pojištěnců</h2>
+                            <p>Přehled evidovaných osob</p>
+                        </div>
+                    </div>
+
+                    <div id="persons-container" class="table-container">
+                        <!-- Tabulku vykreslí JavaScript. -->
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="footer">
+                Evidence pojištění © 2026
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>

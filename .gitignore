@@ -1,0 +1,23 @@
+# Závislosti Node.js
+node_modules/
+
+# Výstupní a sestavené soubory
+dist/
+build/
+
+# Konfigurace lokálního prostředí
+.env
+.env.*
+
+# Pracovní poznámky a textové soubory
+*.txt
+
+# Původní zadání
+zadani/
+
+# Systémové soubory
+.DS_Store
+Thumbs.db
+
+# Logy
+*.log
